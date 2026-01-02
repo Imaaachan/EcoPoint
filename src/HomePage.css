@@ -1,0 +1,379 @@
+/* HomePage.css */
+
+/* Global */
+.homepage-container {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+/* --- NAVBAR FIXED --- */
+.home-navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    /* This ensures one element is at the start, one at the end */
+    justify-content: space-between; 
+    padding: 0 50px; /* Add padding to prevent sticking to edge */
+    z-index: 100;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    /* Ensure logo doesn't shrink */
+    flex-shrink: 0; 
+}
+
+.nav-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    /* Force alignment to the right */
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.nav-menu li {
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap; /* Prevent menu items from wrapping */
+}
+
+.nav-menu li:hover, .nav-menu li.active {
+    color: white;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* --- HERO SLIDER --- */
+.hero-slider {
+    position: relative;
+    height: 100vh; /* Layar penuh */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Efek transisi halus */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Gelapkan gambar sedikit */
+}
+
+.hero-content-home {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: left;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.slogan-text {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Dots Navigasi */
+.slider-dots {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* --- SERVICES MENU (Floating) --- */
+.services-menu-container {
+    position: relative;
+    margin-top: -100px; /* Menimpa slider sedikit */
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.services-box {
+    /* Background gambar diatur inline di JSX */
+    width: 1000px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    /* Agar teks tetap terbaca di atas background */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.service-item {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling Baru untuk Icon Gambar */
+.service-icon-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.service-item:hover .service-icon-img img {
+    transform: scale(1.1);
+}
+
+.service-item h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* --- INFO SECTION --- */
+.info-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 80px auto;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.info-image {
+    flex: 1;
+    text-align: center;
+}
+
+.info-image img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.info-text {
+    flex: 1.5;
+    padding-left: 50px;
+}
+
+.info-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-text li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- MARQUEE (PERBAIKAN SEAMLESS) --- */
+.green-marquee {
+    background-color: #4CAF50;
+    padding: 15px 0;
+    overflow: hidden; /* Sembunyikan yang keluar layar */
+    white-space: nowrap; /* Wajib satu baris */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    /* Teknik Seamless: Geser sejauh 50% (setengah dari total panjang duplikat) */
+    animation: scrollText 30s linear infinite;
+    width: max-content; /* Pastikan lebar mengikuti konten */
+}
+
+.marquee-content span {
+    margin: 0 40px; /* Jarak antar kata */
+    display: flex;
+    align-items: center;
+}
+
+.run-icon {
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Animasi Seamless: Geser dari 0 ke -50% */
+@keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- STATS SECTION (PERBAIKAN POSISI) --- */
+.stats-section {
+    text-align: center;
+    /* UPDATE: Padding atas dikurangi dari 100px jadi 60px biar Judul naik */
+    padding: 60px 20px 100px 20px; 
+    position: relative;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.stats-title {
+    font-size: 36px;
+    font-weight: 700;
+    /* Jarak antara Tulisan Judul dengan Garis di bawahnya */
+    margin-bottom: 20px; 
+    color: #0E3D28;
+}
+
+.line-divider {
+    width: 200px;
+    height: 4px;
+    background-color: #0E3D28;
+    margin: 0 auto 50px;
+    border-radius: 2px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.9); /* Kotak semi-transparan putih */
+    padding: 20px 60px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.stat-number {
+    font-size: 56px;
+    margin: 0;
+    font-weight: 900;
+    color: #333;
+}
+
+.leaf-decoration-left, .leaf-decoration-right {
+    position: absolute;
+    bottom: 0;
+    font-size: 100px;
+    color: #4CAF50;
+    opacity: 0.2;
+}
+
+.leaf-decoration-left { left: 0; }
+.leaf-decoration-right { right: 0; transform: scaleX(-1); }
+
+/* --- CONTACT SECTION (Footer untuk Homepage) --- */
+.home-contact-section {
+    background-color: #0E3D28; /* Hijau Tua Seragam */
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contact-title {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    
+}

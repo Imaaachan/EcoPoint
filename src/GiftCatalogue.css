@@ -1,0 +1,462 @@
+/* Container Utama (Style seragam dengan Deposit Trash) */
+.gift-container {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* --- BACKGROUND IMAGE BARU --- */
+.gift-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Gambar Baru: Tumpukan botol plastik (berbeda dari DepositTrash) */
+    background: url('https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    /* Filter sedikit lebih gelap agar tulisan di atasnya lebih kontras */
+    filter: brightness(0.5);
+    z-index: -1;
+}
+/* ----------------------------- */
+
+/* Navbar Transparan */
+.gift-navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+    position: relative; z-index: 10;
+}
+
+.nav-right span { 
+    margin-left: 20px; 
+    cursor: pointer; 
+    font-weight: 500; 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8); /* Shadow lebih kuat */
+    transition: 0.3s;
+}
+.nav-right span:hover { color: #4CAF50; }
+
+/* Content Wrapper */
+.gift-content {
+    padding-top: 50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding-bottom: 50px;
+}
+
+/* Judul Halaman */
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.points-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    background: rgba(76, 175, 80, 0.9); /* Hijau lebih solid */
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- MENU SELECTION (KARTU PUTIH) --- */
+.catalogue-grid {
+    display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;
+}
+
+.catalogue-card {
+    background: rgba(255, 255, 255, 0.95);
+    width: 280px;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.catalogue-card:hover { 
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3); /* Efek shadow hijau saat hover */
+}
+
+.cat-icon { font-size: 60px; margin-bottom: 20px; display: block; }
+.cat-title { font-size: 24px; font-weight: 700; color: #1B5E20; margin-bottom: 20px; }
+
+.btn-action {
+    background-color: #1B5E20;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.btn-action:hover { background-color: #4CAF50; }
+
+/* --- REDEEM MONEY BOX --- */
+.redeem-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    color: #333;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.input-group-money { display: flex; gap: 10px; margin-bottom: 20px; }
+.input-money {
+    flex: 1; padding: 15px; border-radius: 10px; border: 2px solid #e0e0e0;
+    font-size: 16px; outline: none; text-align: center; transition: 0.3s;
+}
+.input-money:focus { border-color: #4CAF50; }
+
+.btn-calc {
+    background-color: #1B5E20; color: white; border: none;
+    padding: 0 25px; border-radius: 10px; font-weight: bold; cursor: pointer;
+    transition: 0.3s;
+}
+.btn-calc:hover { background-color: #4CAF50; }
+
+.cash-value-display { 
+    margin-bottom: 30px; font-size: 22px; color: #1B5E20; font-weight: 800; text-align: center; 
+}
+
+/* --- VOUCHER GRID --- */
+.voucher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.voucher-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-top: 5px solid #4CAF50; /* Aksen hijau di atas kartu */
+}
+.voucher-card:hover { transform: translateY(-5px); }
+
+.voucher-title { font-weight: 800; font-size: 18px; color: #1B5E20; margin-bottom: 10px; }
+.voucher-desc { font-size: 14px; margin-bottom: 15px; flex-grow: 1; color: #666; }
+.voucher-cost { font-weight: 800; font-size: 18px; margin-bottom: 20px; color: #4CAF50; }
+
+.btn-redeem-voucher {
+    background-color: #1B5E20; color: white; border: none;
+    padding: 12px; width: 100%; border-radius: 8px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.btn-redeem-voucher:hover { background-color: #4CAF50; }
+
+.voucher-cost-large {
+    font-size: 24px;
+    font-weight: 800;
+    color: #4CAF50; /* Hijau cerah seperti di gambar referensi */
+    margin-bottom: 20px;
+}
+
+.btn-redeem-money {
+    flex: 1; /* Ambil sisa ruang */
+    background-color: #1B5E20;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-redeem-money:hover {
+    background-color: #2E7D32;
+}
+
+/* Back Button Kecil */
+.nav-back-simple {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    display: flex; align-items: center;
+}
+.nav-back-simple:before { content: '← '; margin-right: 5px; font-size: 18px;}
+.nav-back-simple:hover { color: #4CAF50; }
+
+/* --- STYLE TAMBAHAN UNTUK REDEEM MONEY --- */
+
+/* Wrapper Kartu Money (Biar agak beda dikit) */
+.money-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.money-info {
+    flex: 1;
+}
+
+.money-actions {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: auto; /* Dorong ke paling bawah */
+}
+
+/* Counter Control (+ 1 -) */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    background-color: #f5f5f5;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.qty-btn-mini {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    color: #1B5E20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.qty-btn-mini:hover {
+    background-color: #1B5E20;
+    color: white;
+}
+
+.qty-display {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* --- STYLE REDEEM CASH (BESAR & RAPI) --- */
+
+/* Kartu Khusus Money yang Lebih Besar */
+.money-card-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px; /* Padding lebih besar */
+    min-height: 380px; /* Tinggi minimal */
+    width: 320px; /* Lebar kartu */
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.money-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Header Kartu */
+.money-header-large {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1B5E20;
+    margin-bottom: 5px;
+}
+
+.money-icon-large {
+    font-size: 28px;
+    color: #4CAF50;
+}
+
+.money-sub {
+    font-size: 13px;
+    color: #777;
+    font-weight: 500;
+}
+
+.card-divider-light {
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+/* Counter Control Besar */
+.qty-control-large {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.qty-btn-large {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.2s;
+}
+
+.qty-value {
+    font-size: 18px; font-weight: 800; color: #333;
+    min-width: 20px;
+}
+
+.small-label {
+    font-size: 12px; color: #888; text-transform: uppercase; margin-bottom: 5px;
+}
+
+.qty-btn-large.minus { background-color: #e0e0e0; color: #555; }
+.qty-btn-large.minus:hover { background-color: #d6d6d6; }
+
+.qty-btn-large.plus { background-color: #1B5E20; color: white; }
+.qty-btn-large.plus:hover { background-color: #144a18; }
+
+.qty-display-large {
+    font-size: 24px;
+    font-weight: 800;
+    color: #333;
+}
+
+/* Total Cost Display */
+.total-cost-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cost-label { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: 1px; }
+.cost-value { font-size: 26px; font-weight: 800; color: #d32f2f; } /* Merah biar ngejreng poin kepotong */
+
+/* Tombol Aksi Sejajar */
+.action-row {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.btn-redeem-card {
+    flex: 2; /* Tombol Redeem lebih lebar */
+    background-color: #1B5E20;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+.btn-redeem-card:hover { background-color: #144a18; }
+
+.btn-cancel-card {
+    flex: 1;
+    background-color: transparent;
+    color: #d32f2f;
+    border: 2px solid #ffebee;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.btn-cancel-card:hover {
+    background-color: #ffebee;
+    border-color: #d32f2f;
+}
+
+.btn-cancel-money {
+    width: 45px;
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    transition: 0.2s;
+}
+.btn-cancel-money:hover {
+    background-color: #ef5350; color: white; border-color: #ef5350;
+}
+
+.qty-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f5f5f5;
+    padding: 8px 15px;
+    border-radius: 50px;
+    margin: 15px 0;
+}
+
+.btn-qty {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: #1B5E20;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.2s;
+}
+.btn-qty:hover { background-color: #1B5E20; color: white; }
+
+.money-card-fixed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px; /* Padding mirip referensi */
+    height: 350px;      /* Tinggi tetap agar rapi */
+    text-align: center;
+}

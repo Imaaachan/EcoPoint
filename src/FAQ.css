@@ -1,0 +1,173 @@
+/* FAQ.css */
+.faq-container {
+    background-color: #0B2219; /* Background Halaman Gelap */
+    min-height: 100vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Khusus FAQ */
+.faq-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0B2219;
+}
+
+.faq-logo {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.faq-nav-links span {
+    margin-left: 30px;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.faq-nav-links span:hover, .faq-nav-links span.active {
+    color: white;
+    font-weight: bold;
+}
+
+/* Content Utama */
+.faq-content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.faq-subtitle {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* --- KOTAK HIJAU (CONTAINER) --- */
+.faq-box-green, .contact-box-green {
+    background-color: #5B7F6D; /* Warna Hijau Kotak sesuai gambar */
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.box-title {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* --- DROPDOWN ITEM --- */
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    background-color: white;
+    color: #333;
+    padding: 15px 20px;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
+}
+
+.arrow-icon {
+    font-size: 12px;
+}
+
+/* Animasi Jawaban */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    color: #555;
+    border-radius: 0 0 8px 8px;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-answer.show {
+    max-height: 150px; /* Batas tinggi jawaban */
+    padding: 15px 20px;
+}
+
+/* --- CONTACT FORM --- */
+.contact-heading {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333; /* Label jadi hitam karena di dalam kotak putih? Di gambar labelnya putih/hitam tergantung */
+}
+
+/* Koreksi label agar terlihat di atas kotak hijau */
+.contact-form label {
+    color: white; 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.btn-send-message {
+    width: 100%;
+    background-color: #1B9C58; /* Hijau Tombol */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-send-message:hover {
+    background-color: #147a44;
+}

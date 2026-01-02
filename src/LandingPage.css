@@ -1,0 +1,235 @@
+/* src/LandingPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.landing-container {
+    width: 100%;
+    overflow-x: hidden; /* Mencegah scroll ke samping */
+}
+
+/* --- HERO SECTION (SPLIT LAYOUT) - FULL SCREEN --- */
+.landing-hero-split {
+    display: flex;
+    height: 100vh; /* KUNCI: Tinggi Pas Satu Layar */
+    width: 100%;
+    position: relative;
+    background: #0E3D28; /* Hijau Tua */
+}
+
+/* --- NAVBAR (Absolute di atas Hero) --- */
+.landing-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+    color: white;
+}
+
+.landing-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.landing-logo img { height: 40px; }
+
+.landing-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.landing-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-menu li {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+.landing-menu li:hover { opacity: 1; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+/* Tombol Get Account dengan Shadow */
+.btn-get-account {
+    background-color: #0E3D28; 
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow */
+}
+
+.btn-get-account:hover {
+    background-color: #1a5e3a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border-color: white;
+}
+
+/* --- KONTEN KIRI (TEKS) --- */
+.hero-left {
+    width: 45%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px; 
+    color: white;
+    z-index: 10;
+}
+
+.hero-logo-large { margin-bottom: -30px; }
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-hashtag {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+/* --- KONTEN KANAN (GAMBAR + GELOMBANG) --- */
+.hero-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Sedikit overlap ke kiri */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Efek Potongan Miring/Gelombang menggunakan Polygon */
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* --- SECTION BAWAH (About, Service, Contact) --- */
+/* (Tetap menggunakan style Anda sebelumnya) */
+
+.about-section {
+    background-color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.section-title-green {
+    color: #0E3D28;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-desc {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #388E3C;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.service-section {
+    background: linear-gradient(180deg, #145235 0%, #0E3D28 100%);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.section-title-white {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.service-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.icon-circle {
+    font-size: 40px;
+    background: #4CAF50;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.service-card h3 { margin-bottom: 10px; }
+.service-card p { font-size: 12px; opacity: 0.8; }
+
+.contact-section {
+    background-color: #092C1C;
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contact-title { margin-bottom: 30px; letter-spacing: 2px; }
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .landing-navbar { padding: 20px; }
+    .landing-nav-right { display: none; } /* Menu hilang di HP (bisa diganti hamburger) */
+    .hero-left { width: 100%; padding: 20px; text-align: center; align-items: center; }
+    .hero-right { display: none; } /* Gambar kanan hilang di HP */
+    .hero-title { font-size: 50px; }
+}

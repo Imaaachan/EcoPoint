@@ -1,0 +1,178 @@
+/* Layout Utama */
+.od-deposit-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* MAIN CONTENT AREA (Penting: margin-left harus sama dengan lebar sidebar) */
+.od-deposit-main {
+    flex: 1;
+    padding: 30px 40px;
+    margin-left: 260px; /* Jarak agar tidak ketutup sidebar */
+    width: calc(100% - 260px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+/* WRAPPER UNTUK FORM DI TENGAH */
+.deposit-content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Tengah secara horizontal */
+    /* align-items: center; */ /* Jangan di-center vertikal biar enak scrollnya */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* KARTU FORM UTAMA */
+.deposit-form-card {
+    background: white;
+    width: 100%;
+    max-width: 850px; /* Batasi lebar maksimal biar gak terlalu lebar */
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+    overflow: hidden; /* Biar border radius aman */
+}
+
+/* TITLE BAR */
+.form-title-bar {
+    padding: 25px 35px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+.form-title-bar h2 { margin: 0; font-size: 22px; color: #1B5E20; font-weight: 700; }
+.form-title-bar p { margin: 5px 0 0 0; font-size: 14px; color: #888; }
+
+/* SECTIONS */
+.form-section {
+    padding: 30px 35px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.section-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-label svg { color: #1B5E20; font-size: 16px; }
+
+/* GRID INPUT */
+.input-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.input-grid-3 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Kolom 1 lebih lebar */
+    gap: 20px;
+    align-items: start;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+    background-color: #fcfcfc;
+    box-sizing: border-box; /* Penting biar padding gak nambah lebar */
+}
+.form-control:focus {
+    border-color: #1B5E20;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+    outline: none;
+}
+.form-control:read-only {
+    background-color: #f5f5f5;
+    color: #888;
+    cursor: default;
+}
+
+/* RATE BOX */
+.rate-display {
+    padding: 12px;
+    background-color: #E8F5E9;
+    border: 1px dashed #2E7D32;
+    border-radius: 10px;
+    text-align: center;
+}
+.rate-value { font-weight: 800; color: #1B5E20; font-size: 16px; display: block; }
+.rate-label { font-size: 11px; color: #555; text-transform: uppercase; }
+
+/* TOTAL POINTS BOX */
+.total-points-box {
+    background: linear-gradient(135deg, #1B5E20, #43A047);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.2);
+}
+.tp-label { font-size: 12px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.tp-value { font-size: 36px; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+/* FOOTER */
+.footer-section {
+    padding: 25px 35px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+.confirm-check { 
+    display: flex; 
+    align-items: center; 
+    font-size: 13px; 
+    color: #555; 
+}
+.confirm-check input { width: 16px; height: 16px; accent-color: #1B5E20; }
+
+.btn-submit {
+    padding: 12px 35px;
+    background-color: #1B5E20;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+.btn-submit:hover { background-color: #144a18; transform: translateY(-2px); }
+.btn-submit:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .od-deposit-main { margin-left: 70px; width: calc(100% - 70px); padding: 20px; }
+    .input-grid-2, .input-grid-3 { grid-template-columns: 1fr; gap: 15px; }
+    .footer-section { flex-direction: column; gap: 20px; align-items: flex-start; }
+    .btn-submit { width: 100%; justify-content: center; }
+}

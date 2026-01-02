@@ -1,0 +1,154 @@
+/* Container Utama */
+.role-container {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.role-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    position: relative;
+    z-index: 100; /* PENTING: Agar tombol bisa diklik */
+}
+
+/* Grup Logo (Gambar + Teks) */
+.role-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara logo dan tulisan */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.role-logo-group:hover {
+    transform: scale(1.05);
+}
+
+.role-logo-img {
+    height: 40px; /* Ukuran Logo */
+    width: auto;
+}
+
+.role-logo-text {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 24px;
+}
+
+/* Tombol Back to Home */
+.nav-back {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none; /* Hilangkan garis bawah default */
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.5); /* Tambah border tipis */
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.nav-back:hover { 
+    background-color: white;
+    color: #0E3D28; /* Warna teks jadi hijau saat hover */
+}
+
+/* Konten Tengah */
+.role-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    text-align: center;
+    margin-top: -50px; 
+}
+
+.role-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.role-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    opacity: 0.9;
+}
+
+/* Grid Kartu */
+.role-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Desain Kartu (Glassmorphism) */
+.role-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 40px 30px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.role-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #4CAF50;
+}
+
+.role-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.role-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.role-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    height: 40px;
+}
+
+/* Tombol Select */
+.btn-select {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.role-card:hover .btn-select {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}

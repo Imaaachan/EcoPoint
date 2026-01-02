@@ -1,0 +1,233 @@
+/* DepositTrash.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.deposit-container {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Image Sesuai Request */
+.deposit-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Gambar batu gelap/tekstur */
+    background: url('https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?q=80&w=2071&auto=format&fit=crop') no-repeat center center/cover;
+    filter: brightness(0.5); /* Gelapkan background biar teks putih jelas */
+    z-index: -1;
+}
+
+/* Navbar */
+.deposit-navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 50px; background-color: transparent; color: white;
+    position: relative; z-index: 10;
+}
+.nav-right span { 
+    margin-left: 20px; cursor: pointer; font-weight: 600; 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5); 
+    transition: color 0.3s;
+}
+.nav-right span:hover { color: #4CAF50; }
+
+/* Content Wrapper */
+.content-wrapper {
+    padding-top: 50px;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.page-title {
+    font-size: 3rem; font-weight: 700; 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 50px; color: white; text-align: center;
+}
+
+/* --- CARDS LAYOUT --- */
+.cards-wrapper {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 50px; 
+    flex-wrap: wrap; 
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- FLIP CARD CONTAINER --- */
+.card-scene {
+    width: 320px; 
+    height: 420px; /* Sedikit lebih tinggi biar muat estimasi poin */
+    perspective: 1000px; 
+    background: transparent; 
+    margin: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: none; 
+    background: transparent;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* --- CARD FACES (Tampilan Kartu) --- */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    /* STYLE BARU: Lengkungan & Padding Besar */
+    border-radius: 30px; 
+    padding: 30px; 
+    
+    background: white; 
+    /* Shadow Tebal agar terlihat timbul */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    top: 0; left: 0;
+}
+
+/* Style saat kartu dibalik (Belakang) */
+.card-face--back {
+    transform: rotateY(180deg);
+    background: #ffffff;
+    z-index: 2;
+}   
+
+.card-face--front {
+    z-index: 1;
+}
+
+/* --- FRONT CONTENT --- */
+.card-icon-circle {
+    width: 80px; height: 80px; 
+    background-color: #E8F5E9; 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-title-green { 
+    color: #1B5E20; 
+    font-weight: 800; 
+    margin: 0; 
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-divider { 
+    width: 50px; height: 4px; 
+    background-color: #1B5E20; 
+    border: none; margin: 10px 0 20px 0; border-radius: 2px;
+}
+
+.card-rate { 
+    font-weight: 600; color: #555; 
+    margin-bottom: 30px; font-size: 16px; 
+}
+
+/* Tombol Add Trash */
+.btn-add-trash {
+    width: 100%; 
+    padding: 15px; 
+    background-color: #1B5E20; 
+    color: white; 
+    border: none;
+    border-radius: 15px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s;
+    font-size: 16px; 
+}
+
+.btn-add-trash:hover { 
+    background-color: #2E7D32; 
+    transform: scale(1.05);
+}
+
+/* --- BACK CONTENT (Input Berat) --- */
+/* Ini dipakai di JSX sebagai 'weight-input-group' */
+.weight-input-group {
+    display: flex; justify-content: center; align-items: center;
+    border: 2px solid #eee; 
+    border-radius: 15px; 
+    padding: 10px;
+    background: #f9f9f9; 
+    margin-bottom: 15px; 
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.weight-input-group:focus-within {
+    border-color: #1B5E20;
+    background: white;
+}
+
+.weight-input {
+    font-size: 28px; 
+    font-weight: 800; 
+    color: #333;
+    border: none;
+    background: transparent;
+    text-align: center;
+    width: 100%;
+    outline: none;
+}
+
+/* Badge Estimasi Poin (Agar logic sebelumnya tetap tampil bagus) */
+.est-points-badge {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    border: 1px dashed #4CAF50;
+}
+
+/* Tombol Aksi */
+.action-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-submit {
+    background-color: #1B5E20; color: white; border: none;
+    padding: 15px; border-radius: 15px; cursor: pointer; font-weight: bold;
+    width: 100%; 
+    font-size: 16px; 
+    transition: 0.3s;
+}
+.btn-submit:hover { background-color: #2E7D32; transform: translateY(-2px); }
+
+.btn-cancel {
+    background-color: transparent; color: #888; border: none;
+    cursor: pointer; font-size: 14px; font-weight: 600;
+    text-decoration: underline;
+    padding: 10px;
+}
+.btn-cancel:hover { color: #d32f2f; }

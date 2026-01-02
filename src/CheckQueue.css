@@ -1,0 +1,138 @@
+.cq-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* PERBAIKAN: Beri margin kiri agar tidak ketutup sidebar */
+.cq-main {
+    flex: 1;
+    padding: 30px 40px;
+    margin-left: 260px; /* Sesuai lebar sidebar */
+    width: calc(100% - 260px);
+    overflow-y: auto;
+}
+
+.cq-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* TABLE STYLES */
+.cq-table-wrapper {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+.cq-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cq-table thead {
+    background-color: #1B5E20;
+    color: white;
+}
+
+.cq-table th, .cq-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cq-table th {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cq-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* BADGES */
+.badge-type {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-weight {
+    font-weight: bold;
+    color: #555;
+}
+
+.cq-action-buttons {
+    display: flex;
+    gap: 10px; /* Jarak antar tombol dikurangi biar rapi */
+    align-items: center;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Tombol Approve */
+.btn-approve {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid transparent;
+}
+
+.btn-approve:hover {
+    background-color: #C8E6C9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
+}
+
+/* Tombol Reject */
+.btn-reject {
+    background-color: #FFEBEE;
+    color: #C62828;
+    border: 1px solid transparent;
+}
+
+.btn-reject:hover {
+    background-color: #FFCDD2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(198, 40, 40, 0.15);
+}
+
+.btn-action svg {
+    font-size: 14px;
+}
+
+.cq-empty {
+    text-align: center;
+    padding: 50px;
+    color: #888;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .cq-main {
+        margin-left: 70px; /* Sesuaikan kalau sidebar mengecil di mobile */
+        width: calc(100% - 70px);
+        padding: 20px;
+    }
+}
