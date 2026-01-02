@@ -26,7 +26,7 @@ import OfficerProfile from './OfficerProfile';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/EcoPoint">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
@@ -53,7 +53,6 @@ function App() {
         <Route path="/admin-profile" element={<AdminProfile />} />
         <Route path="/officer-dashboard" element={<OfficerDashboard />} />
         <Route path="/officer-login" element={<OfficerLogin />} />
-        <Route path="/officer-dashboard" element={<OfficerDashboard />} />
         <Route path="/check-queue" element={<CheckQueue />} />
         <Route path="/officer-deposit" element={<OfficerDeposit />} />
         <Route path="/officer-profile" element={<OfficerProfile />} />
