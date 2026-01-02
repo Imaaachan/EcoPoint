@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/EcoPoint/static/css/main.62f2dd3c.css",
-    "main.js": "/EcoPoint/static/js/main.21d107c3.js",
+    "main.js": "/EcoPoint/static/js/main.926128a4.js",
     "static/js/453.062a159f.chunk.js": "/EcoPoint/static/js/453.062a159f.chunk.js",
     "static/media/slideges4.png": "/EcoPoint/static/media/slideges4.55b6390b9dd9ae87a824.png",
     "static/media/slideges2.png": "/EcoPoint/static/media/slideges2.0a2525c65a391e8fa113.png",
@@ -17,11 +17,11 @@
     "static/media/transhis.png": "/EcoPoint/static/media/transhis.eb7c0b87b0d5c657adf8.png",
     "index.html": "/EcoPoint/index.html",
     "main.62f2dd3c.css.map": "/EcoPoint/static/css/main.62f2dd3c.css.map",
-    "main.21d107c3.js.map": "/EcoPoint/static/js/main.21d107c3.js.map",
+    "main.926128a4.js.map": "/EcoPoint/static/js/main.926128a4.js.map",
     "453.062a159f.chunk.js.map": "/EcoPoint/static/js/453.062a159f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.62f2dd3c.css",
-    "static/js/main.21d107c3.js"
+    "static/js/main.926128a4.js"
   ]
 }
