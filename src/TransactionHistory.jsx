@@ -20,7 +20,7 @@ const TransactionHistory = () => {
     useEffect(() => {
         if (user.id !== 0) {
             // PERBAIKAN: Port 9090
-            fetch(`http://localhost:9090/api/transaction/history/${user.id}`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/history/${user.id}`)
                 .then(res => {
                     if (!res.ok) throw new Error("Gagal load data");
                     return res.json();

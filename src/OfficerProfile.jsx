@@ -42,7 +42,7 @@ const OfficerProfile = () => {
 
             try {
                 // Kita pakai endpoint dashboard karena Petugas juga User
-                const response = await fetch(`http://localhost:9090/api/dashboard/profile/${userId}`);
+                const response = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/profile/${userId}`);
                 if (response.ok) {
                     const data = await response.json();
                     
@@ -58,7 +58,7 @@ const OfficerProfile = () => {
                     });
 
                     if (data.fotoProfil) {
-                        setPreviewImage(`http://localhost:9090/api/dashboard/uploads/${data.fotoProfil}`);
+                        setPreviewImage(`https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${data.fotoProfil}`);
                     }
 
                     // Update LocalStorage agar sinkron
@@ -116,7 +116,7 @@ const OfficerProfile = () => {
         });
         // Reset Foto
         if (localUser.fotoProfil) {
-            setPreviewImage(`http://localhost:9090/api/dashboard/uploads/${localUser.fotoProfil}`);
+            setPreviewImage(`https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${localUser.fotoProfil}`);
         } else {
             setPreviewImage(null);
         }
@@ -139,7 +139,7 @@ const OfficerProfile = () => {
 
         try {
             // Gunakan endpoint yang sama dengan Admin (User Update Generic)
-            const response = await fetch(`http://localhost:9090/api/dashboard/profile-update/${userId}`, {
+            const response = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/profile-update/${userId}`, {
                 method: 'PUT',
                 body: dataToSend,
             });
@@ -152,7 +152,7 @@ const OfficerProfile = () => {
                 localStorage.setItem('user', JSON.stringify(dataTerbaru));
                 
                 if(dataTerbaru.fotoProfil) {
-                    setPreviewImage(`http://localhost:9090/api/dashboard/uploads/${dataTerbaru.fotoProfil}`);
+                    setPreviewImage(`https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${dataTerbaru.fotoProfil}`);
                 }
 
                 setIsEditing(false);

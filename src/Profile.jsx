@@ -33,12 +33,12 @@ const Profile = () => {
     // Fetch Data
     useEffect(() => {
         if (user.id) {
-            fetch(`http://localhost:9090/api/users/${user.id}/stats`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/stats`)
                 .then(res => res.json())
                 .then(data => setUser(prev => ({ ...prev, poin: data.poin })))
                 .catch(console.error);
 
-            fetch(`http://localhost:9090/api/transaction/history/${user.id}`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/history/${user.id}`)
                 .then(res => res.json())
                 .then(data => setHistory(data.slice(0, 5))) 
                 .catch(console.error);
@@ -52,7 +52,7 @@ const Profile = () => {
 
             // Set Preview Foto jika ada di database
             if (user.fotoProfil) {
-                setPreviewImage(`http://localhost:9090/api/users/uploads/${user.fotoProfil}`);
+                setPreviewImage(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/uploads/${user.fotoProfil}`);
             }
         }
     }, [user.id]);
@@ -83,7 +83,7 @@ const Profile = () => {
                 dataToSend.append('file', selectedFile);
             }
 
-            const res = await fetch(`http://localhost:9090/api/users/${user.id}/update`, {
+            const res = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/update`, {
                 method: 'PUT',
                 // JANGAN set Content-Type header manual saat pakai FormData!
                 body: dataToSend
@@ -101,7 +101,7 @@ const Profile = () => {
                 
                 // Update preview dengan URL baru dari backend
                 if (finalUser.fotoProfil) {
-                    setPreviewImage(`http://localhost:9090/api/users/uploads/${finalUser.fotoProfil}`);
+                    setPreviewImage(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/uploads/${finalUser.fotoProfil}`);
                 }
 
                 setIsEditing(false);
@@ -120,7 +120,7 @@ const Profile = () => {
             return;
         }
         try {
-            const res = await fetch(`http://localhost:9090/api/users/${user.id}/change-password`, {
+            const res = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/change-password`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(passData)

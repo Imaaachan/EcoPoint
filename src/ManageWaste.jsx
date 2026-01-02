@@ -17,7 +17,7 @@ const ManageWaste = () => {
 
   // URL Foto Profil
   const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
   const [wasteTypes, setWasteTypes] = useState([]);
@@ -28,7 +28,7 @@ const ManageWaste = () => {
   const [formData, setFormData] = useState({ id: null, type: '', description: '', price: '' });
 
   const fetchData = () => {
-    fetch('http://localhost:9090/api/waste/categories')
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/waste/categories')
         .then(res => res.json())
         .then(data => {
             const mappedData = data.map(item => ({
@@ -43,7 +43,7 @@ const ManageWaste = () => {
         })
         .catch(err => console.error("Err waste:", err));
 
-    fetch('http://localhost:9090/api/waste/logs')
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/waste/logs')
         .then(res => res.json())
         .then(data => setPriceLogs(data.reverse()))
         .catch(err => console.error("Err logs:", err));
@@ -68,7 +68,7 @@ const ManageWaste = () => {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:9090/api/waste/${id}`, { method: 'DELETE' })
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/waste/${id}`, { method: 'DELETE' })
                 .then(res => {
                     if(res.ok) {
                         Swal.fire('Deleted!', 'Category has been removed.', 'success');
@@ -145,11 +145,11 @@ const ManageWaste = () => {
 
       if (isEditMode) {
           // URL BARU: PUT /api/waste/{id}
-          url = `http://localhost:9090/api/waste/${formData.id}`;
+          url = `https://untemptable-untediously-carole.ngrok-free.dev/api/waste/${formData.id}`;
           method = 'PUT';
       } else {
           // URL ADD: POST /api/waste
-          url = 'http://localhost:9090/api/waste'; 
+          url = 'https://untemptable-untediously-carole.ngrok-free.dev/api/waste'; 
           method = 'POST';
       }
 

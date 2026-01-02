@@ -22,7 +22,7 @@ const Login = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:9090/api/users/login', { 
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/users/login', { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData),
@@ -68,7 +68,7 @@ const Login = () => {
 
     if (userReset) {
             try {
-                const res = await fetch(`http://localhost:9090/api/officers/request-reset/${userReset}`, {
+                const res = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/officers/request-reset/${userReset}`, {
                     method: 'PUT'
                 });
                 if (res.ok) {

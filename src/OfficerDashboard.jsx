@@ -19,7 +19,7 @@ const OfficerDashboard = () => {
 
     // Buat URL Foto dari Backend
     const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
     // State untuk Statistik
@@ -35,7 +35,7 @@ const OfficerDashboard = () => {
         if(storedUser) setUser(storedUser);
 
         // Fetch Stats
-        fetch('http://localhost:9090/api/officers/dashboard-stats')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers/dashboard-stats')
             .then(res => {
                 if (res.ok) return res.json();
                 throw new Error("Gagal ambil data");

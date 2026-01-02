@@ -16,7 +16,7 @@ const ManageRewards = () => {
 
     // URL Foto Profil
     const photoUrl = user.fotoProfil 
-        ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+        ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
         : null;
 
     const [vouchers, setVouchers] = useState([]);
@@ -25,7 +25,7 @@ const ManageRewards = () => {
     const [formData, setFormData] = useState({ id: null, name: '', points: '', type: 'VOUCHER', code: '', description: '' });
 
     const fetchData = () => {
-        fetch('http://localhost:9090/api/rewards')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/rewards')
             .then(res => res.json())
             .then(data => {
                 setVouchers(data.filter(i => i.type === 'VOUCHER'));
@@ -48,7 +48,7 @@ const ManageRewards = () => {
          points: parseInt(formData.points) || 0 
       };
 
-      const url = formData.id ? `http://localhost:9090/api/rewards/${formData.id}` : 'http://localhost:9090/api/rewards';
+      const url = formData.id ? `https://untemptable-untediously-carole.ngrok-free.dev/api/rewards/${formData.id}` : 'https://untemptable-untediously-carole.ngrok-free.dev/api/rewards';
       const method = formData.id ? 'PUT' : 'POST';
 
       fetch(url, {
@@ -80,7 +80,7 @@ const ManageRewards = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:9090/api/rewards/${id}`, { method: 'DELETE' })
+                fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/rewards/${id}`, { method: 'DELETE' })
                     .then(res => {
                         if (res.ok) {
                             Swal.fire('Deleted!', 'Reward has been deleted.', 'success');

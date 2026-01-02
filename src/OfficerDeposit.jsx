@@ -18,7 +18,7 @@ const OfficerDeposit = () => {
     });
 
     const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
     // State
@@ -39,7 +39,7 @@ const OfficerDeposit = () => {
         if(storedUser) setUser(storedUser);
 
         // Fetch Waste Types
-        fetch('http://localhost:9090/api/officers/waste-types')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers/waste-types')
             .then(res => res.json())
             .then(data => {
                 setWasteTypes(data);
@@ -78,7 +78,7 @@ const OfficerDeposit = () => {
         setLoading(true);
 
         try {
-            const res = await fetch('http://localhost:9090/api/officers/deposit-manual', {
+            const res = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers/deposit-manual', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

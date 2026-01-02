@@ -20,7 +20,7 @@ const ManageOfficers = () => {
 
   // URL Foto Profil
   const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
   // Data State
@@ -39,7 +39,7 @@ const ManageOfficers = () => {
 
   // Fetch Officers
   const fetchOfficers = () => {
-    fetch('http://localhost:9090/api/officers')
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers')
       .then(res => res.json())
       .then(data => {
         const formatted = data.map(item => ({
@@ -123,8 +123,8 @@ const ManageOfficers = () => {
       };
 
       const url = isEditMode 
-        ? `http://localhost:9090/api/officers/${formData.pk_id}` 
-        : 'http://localhost:9090/api/officers';
+        ? `https://untemptable-untediously-carole.ngrok-free.dev/api/officers/${formData.pk_id}` 
+        : 'https://untemptable-untediously-carole.ngrok-free.dev/api/officers';
       
       const method = isEditMode ? 'PUT' : 'POST';
 
@@ -146,7 +146,7 @@ const ManageOfficers = () => {
   };
 
   const confirmDelete = () => {
-      fetch(`http://localhost:9090/api/officers/${deleteTargetPk}`, { method: 'DELETE' })
+      fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/officers/${deleteTargetPk}`, { method: 'DELETE' })
         .then(() => { 
             fetchOfficers(); 
             setShowDeleteModal(false); 
@@ -164,7 +164,7 @@ const ManageOfficers = () => {
           confirmButtonText: 'Yes, Reset'
       }).then((result) => {
           if (result.isConfirmed) {
-              fetch(`http://localhost:9090/api/officers/admin-reset/${pk_id}`, { method: 'PUT' })
+              fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/officers/admin-reset/${pk_id}`, { method: 'PUT' })
                 .then(res => {
                     if(res.ok) {
                         fetchOfficers(); 

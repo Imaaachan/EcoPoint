@@ -20,7 +20,7 @@ const OfficerLogin = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:9090/api/users/login', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/users/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -88,7 +88,7 @@ const handleForgotPassword = async () => {
             const [userReset, newPass] = result.value;
 
             try {
-                const res = await fetch(`http://localhost:9090/api/officers/auth/reset-password`, {
+                const res = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/officers/auth/reset-password`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username: userReset, newPassword: newPass })

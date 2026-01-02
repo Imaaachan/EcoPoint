@@ -25,7 +25,7 @@ const AdminDashboard = () => {
 
   // Buat URL Foto berdasarkan data user.fotoProfil
   const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
   // --- STATE LAINNYA (TETAP) ---
@@ -45,24 +45,24 @@ const AdminDashboard = () => {
     }
 
     // 1. Fetch Stats Cards
-    fetch('http://localhost:9090/api/dashboard/stats')
+    fetch('https://untemptable-untediously-carole.ngrok-free.devapi/dashboard/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error("Err stats:", err));
 
     // 2. Fetch Officers
-    fetch('http://localhost:9090/api/officers')
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers')
       .then(res => res.json())
       .then(data => { if(Array.isArray(data)) setTopOfficers(data.slice(0, 5)); })
       .catch(err => console.error("Err officers:", err));
 
     // 3. FETCH CHART: WASTE COMPOSITION (PIE)
-    fetch('http://localhost:9090/api/dashboard/chart/composition') 
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/chart/composition') 
       .then(res => res.json())
       .then(data => setWasteData(data))
 
     // 4. FETCH CHART: PERFORMANCE (AREA)
-    fetch('http://localhost:9090/api/dashboard/chart/performance')
+    fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/chart/performance')
       .then(res => res.json())
       .then(data => setPerformanceData(data))
 

@@ -42,7 +42,7 @@ const Register = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:9090/api/users/register', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/users/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

@@ -13,7 +13,7 @@ const DepositTrash = () => {
 
     // FETCH DATA
     useEffect(() => {
-        fetch('http://localhost:9090/api/transaction/waste-types')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/waste-types')
             .then(res => res.json())
             .then(data => {
                 setTrashOptions(data);
@@ -55,7 +55,7 @@ const DepositTrash = () => {
         const userStorage = JSON.parse(localStorage.getItem('user'));
         
         try {
-            const response = await fetch('http://localhost:9090/api/transaction/deposit', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/deposit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

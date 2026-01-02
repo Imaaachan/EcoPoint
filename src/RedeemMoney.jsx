@@ -23,13 +23,13 @@ const RedeemMoney = () => {
     // --- FETCH DATA ---
     useEffect(() => {
         if (user.id) {
-            fetch(`http://localhost:9090/api/users/${user.id}/stats`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/stats`)
                 .then(res => res.json())
                 .then(stats => setUser(prev => ({ ...prev, poin: stats.poin })))
                 .catch(err => console.error(err));
         }
 
-        fetch('http://localhost:9090/api/transaction/cash-rewards')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/cash-rewards')
             .then(res => res.json())
             .then(data => {
                 setCashRewards(data);
@@ -88,7 +88,7 @@ const RedeemMoney = () => {
         if (!confirm.isConfirmed) return;
 
         try {
-            const response = await fetch('http://localhost:9090/api/transaction/redeem', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/redeem', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

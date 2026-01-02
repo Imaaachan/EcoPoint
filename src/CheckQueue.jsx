@@ -17,13 +17,13 @@ const CheckQueue = () => {
     });
 
     const photoUrl = user.fotoProfil 
-      ? `http://localhost:9090/api/dashboard/uploads/${user.fotoProfil}` 
+      ? `https://untemptable-untediously-carole.ngrok-free.dev/api/dashboard/uploads/${user.fotoProfil}` 
       : null;
 
     // FETCH DATA ANTRIAN
     const fetchQueue = async () => {
         try {
-            const res = await fetch('http://localhost:9090/api/officers/pending-queue');
+            const res = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/officers/pending-queue');
             if (res.ok) {
                 const data = await res.json();
                 setQueue(data);
@@ -55,7 +55,7 @@ const CheckQueue = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const res = await fetch(`http://localhost:9090/api/officers/verify/${id}`, {
+                    const res = await fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/officers/verify/${id}`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 

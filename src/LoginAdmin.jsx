@@ -21,7 +21,7 @@ const AdminLogin = () => {
 
         try {
             // Menggunakan endpoint login yang sama
-            const response = await fetch('http://localhost:9090/api/users/login', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', // <--- WAJIB ADA

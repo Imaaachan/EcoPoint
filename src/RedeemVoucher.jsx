@@ -22,7 +22,7 @@ const RedeemVoucher = () => {
     useEffect(() => {
         if (user.id) {
             // Ambil Poin Real-time (yang sudah diperbaiki di backend)
-            fetch(`http://localhost:9090/api/users/${user.id}/stats`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/stats`)
                 .then(res => res.json())
                 .then(stats => {
                     console.log("Poin terbaru:", stats.poin); // Cek console browser
@@ -34,7 +34,7 @@ const RedeemVoucher = () => {
         }
 
         // B. Ambil Daftar Voucher dari Database Admin
-        fetch('http://localhost:9090/api/transaction/vouchers')
+        fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/vouchers')
             .then(res => res.json())
             .then(data => {
                 setVouchers(data);
@@ -87,7 +87,7 @@ const handleRedeem = async (item) => {
 
         // 3. Proses Redeem ke Backend (Hanya jalan kalau Yes)
         try {
-            const response = await fetch('http://localhost:9090/api/transaction/redeem', {
+            const response = await fetch('https://untemptable-untediously-carole.ngrok-free.dev/api/transaction/redeem', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

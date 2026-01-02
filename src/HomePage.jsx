@@ -34,7 +34,7 @@ const HomePage = () => {
     // --- FETCH DATA TERBARU DARI BACKEND ---
     useEffect(() => {
         if (user.id) {
-            fetch(`http://localhost:9090/api/users/${user.id}/stats`)
+            fetch(`https://untemptable-untediously-carole.ngrok-free.dev/api/users/${user.id}/stats`)
                 .then(res => {
                     if(res.ok) return res.json();
                     throw new Error("Gagal ambil data");
