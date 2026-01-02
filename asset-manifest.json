@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/EcoPoint/static/css/main.62f2dd3c.css",
+    "main.js": "/EcoPoint/static/js/main.21d107c3.js",
+    "static/js/453.062a159f.chunk.js": "/EcoPoint/static/js/453.062a159f.chunk.js",
+    "static/media/slideges4.png": "/EcoPoint/static/media/slideges4.55b6390b9dd9ae87a824.png",
+    "static/media/slideges2.png": "/EcoPoint/static/media/slideges2.0a2525c65a391e8fa113.png",
+    "static/media/slideges3.png": "/EcoPoint/static/media/slideges3.191c9a3a601bb7aea192.png",
+    "static/media/slideges1.png": "/EcoPoint/static/media/slideges1.e219b47449c8744893c2.png",
+    "static/media/BGservices.png": "/EcoPoint/static/media/BGservices.c8578da52296a7f93e36.png",
+    "static/media/image_5.png": "/EcoPoint/static/media/image_5.c16a361ad579e912f688.png",
+    "static/media/BGsectpoint.png": "/EcoPoint/static/media/BGsectpoint.70af3bde79142b9aed4c.png",
+    "static/media/truck.png": "/EcoPoint/static/media/truck.c599534569c586e6131f.png",
+    "static/media/logoecopoint.png": "/EcoPoint/static/media/logoecopoint.9f01ef973fe83521e18f.png",
+    "static/media/deposit.png": "/EcoPoint/static/media/deposit.0bfed0b9d52b2ce239fa.png",
+    "static/media/giftcatalogue.png": "/EcoPoint/static/media/giftcatalogue.445b6e05f8783099c456.png",
+    "static/media/transhis.png": "/EcoPoint/static/media/transhis.eb7c0b87b0d5c657adf8.png",
+    "index.html": "/EcoPoint/index.html",
+    "main.62f2dd3c.css.map": "/EcoPoint/static/css/main.62f2dd3c.css.map",
+    "main.21d107c3.js.map": "/EcoPoint/static/js/main.21d107c3.js.map",
+    "453.062a159f.chunk.js.map": "/EcoPoint/static/js/453.062a159f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62f2dd3c.css",
+    "static/js/main.21d107c3.js"
+  ]
+}
